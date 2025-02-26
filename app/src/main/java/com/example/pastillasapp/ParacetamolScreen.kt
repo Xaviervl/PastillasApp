@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetallePantalla(medicinanombre : String){
+fun ParacetamoslScreen(medicinanombre : String){
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("Detalles del Medicamento") })
