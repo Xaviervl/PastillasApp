@@ -21,7 +21,7 @@ fun LoginScreen(navigatetoMain : () -> Unit){
         Button(onClick = {navigatetoMain()}) {
             Text(text = "Navegar")
         }
-        espaciador(50)
+        espaciador(100)
         Text( text = stringResource(id = R.string.loginad), fontSize = 15.sp, fontWeight = FontWeight.Bold)
     }
 }

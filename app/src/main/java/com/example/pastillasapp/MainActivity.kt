@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -47,6 +48,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.pastillasapp.navegacion.NavigationWrapper
 
 class MainActivity : ComponentActivity() {
@@ -61,17 +63,17 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun vista() {
+fun vista(navController: NavController) {
     Scaffold(
         topBar = { top() },
         content = { paddingValues ->
-            LazyColumn(
+            LazyColumn( // Se agrega un lazycolumn ya que si en el caso de que los componentes superen el tamaño de la pantalla se pueda desplazar hacia abajo
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
             ) {
                 item {
-                    carrusel()
+                    carrusel(navController)
                 }
 
                 item {
@@ -87,7 +89,7 @@ fun vista() {
 }
 
 @Composable
-fun carrusel() {
+fun carrusel(navController: NavController) {
     val imagenes = listOf(
         R.drawable.paracetamol,
         R.drawable.ibuprofeno,
@@ -107,8 +109,13 @@ fun carrusel() {
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(5) { index ->
+            val medicinaNombre = stringResource(id = nombres[index])
             Card(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable {
+                        navController.navigate("detalle/$medicinaNombre")
+                    }
             ) {
                 Column(
                     modifier = Modifier
