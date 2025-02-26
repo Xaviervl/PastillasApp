@@ -5,4 +5,18 @@
     <string name="ibuprofeno">Ibuproeno</string>
     <string name="naproxeno">Naproxeno</string>
     <string name="amoxicilina">Amoxicilina</string>
+
+    <string name="beta">ESTO ES UNA BETA :)</string>
+
+    <string name="texto1">Deje sus comentarios :D</string>
+    <string name="label1">Comentarios</string>
+    <string name="placeholder1">Mejoraremos Proximamente...</string>
+
+    <string name="p1">Esta es la primera version de la app en futuras entregas se irán agregando actualizaciones que iran de la mano con las tareas subidas\n</string>
+    <string name="p2">PROXIMAS ACTUALIZACIONES:</string>
+    <string name="p2_1">-Se agregará un calendario en el cual se podra notificar si se ha tomado la pastilla o no (API)\n-Se seguira mejorando los menús y pagina principal :D\n</string>
+    <string name="p3">FUTURAS ACTUALIZACIONES:</string>
+    <string name="p3_1">Se agregará Persistencia y Gestión de Datos\n</string>
+    <string name="p4">ACTUALIZACIONES BASADAS EN COMENTARIOS:</string>
+
 </resources>
