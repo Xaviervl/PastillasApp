@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Warning
@@ -46,32 +47,40 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pastillasapp.navegacion.NavigationWrapper
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            vista()
+            NavigationWrapper()
         }
     }
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Preview(showBackground = true)
 @Composable
 fun vista() {
     Scaffold(
         topBar = { top() },
         content = { paddingValues ->
-            Column(
+            LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
             ) {
-                carrusel()
-                espaciador(55)
-                comentarios()
+                item {
+                    carrusel()
+                }
+
+                item {
+                    espaciador(55)
+                }
+
+                item {
+                    comentarios()
+                }
             }
         }
     )
@@ -162,25 +171,25 @@ fun top() {
 fun comentarios(){
     var state by remember { mutableStateOf("") }
     var coment by remember { mutableStateOf("") }
-        Column {
-            Text(text = stringResource(id = R.string.texto1), fontSize = 16.sp)
-            espaciador(5)
-            OutlinedTextField( value = state, onValueChange = { state = it},
-                label = { Text(text = stringResource(id = R.string.label1))},
-                placeholder = { Text(text = stringResource(id = R.string.placeholder1))},
-                singleLine = true
-            )
-            espaciador(10)
-            Button(onClick = {
-                coment = state },
-                colors = ButtonDefaults.buttonColors(
+    Column {
+        Text(text = stringResource(id = R.string.texto1), fontSize = 16.sp)
+        espaciador(5)
+        OutlinedTextField( value = state, onValueChange = { state = it},
+            label = { Text(text = stringResource(id = R.string.label1))},
+            placeholder = { Text(text = stringResource(id = R.string.placeholder1))},
+            singleLine = true
+        )
+        espaciador(10)
+        Button(onClick = {
+            coment = state },
+            colors = ButtonDefaults.buttonColors(
                 containerColor = colorResource(id = R.color.verde)))
-            {
-                Text(text = "Click")
-            }
-            espaciador(15)
-            texto(coment)
+        {
+            Text(text = "Click")
         }
+        espaciador(15)
+        texto(coment)
+    }
 }
 
 @Composable

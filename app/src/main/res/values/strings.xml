@@ -19,4 +19,8 @@
     <string name="p3_1">Se agregará Persistencia y Gestión de Datos\n</string>
     <string name="p4">ACTUALIZACIONES BASADAS EN COMENTARIOS:</string>
 
+
+    <string name="login">LOGIN SCREEN</string>
+    <string name="loginad">*Esta es una simple login screen provisinal, se irá mejorando*</string>
+
 </resources>
