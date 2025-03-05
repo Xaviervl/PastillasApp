@@ -60,7 +60,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.jetbrains.kotlinx.serialization.json)
-    implementation(libs.coil.compose)
+    implementation("io.coil-kt:coil-compose:2.2.2")
     implementation(libs.androidx.navigation.compose)
 
     //noinspection UseTomlInstead

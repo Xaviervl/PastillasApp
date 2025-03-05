@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -30,9 +29,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.crossfade
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.example.pastillasapp.model.apidata.MedicamentosRepository
 import com.example.pastillasapp.model.navegacion.NavigationWrapper
 
@@ -82,11 +80,6 @@ fun detalles(nregistro: String) {
 
 @Composable
 fun medicinaItem(medicina: Medicamentos) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp)
-    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -96,18 +89,18 @@ fun medicinaItem(medicina: Medicamentos) {
             // 📌 Sección de detalles (Izquierda)
             Column(
                 modifier = Modifier
-                    .weight(1f) // Ocupa el 50% del espacio
+                    .fillMaxWidth()
                     .padding(end = 16.dp)
             ) {
                 Text(text = "Número de registro: ${medicina.nregistro}", style = MaterialTheme.typography.titleMedium)
                 Text(text = "Nombre: ${medicina.nombre ?: "Desconocido"}")
                 Text(text = "Laboratorio: ${medicina.labtitular ?: "Desconocido"}")
+                espaciador(50)
                 imagenesCoil(medicina.nregistro)
             }
 
             // 📌 Imagen del medicamento (Derecha)
         }
-    }
 }
 
 
@@ -124,6 +117,7 @@ fun imagenesCoil(codigo: String) {
 
     val imagenUrl = codigos[codigo]
 
+
     if (imagenUrl != null) {
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
@@ -131,14 +125,14 @@ fun imagenesCoil(codigo: String) {
                 .build(),
             contentDescription = "Imagen del medicamento",
             modifier = Modifier
-                .size(120.dp) // Ajusta el tamaño de la imagen
-                .clip(RoundedCornerShape(8.dp)) // Bordes redondeados
+                .size(320.dp) // Ajusta el tamaño de la imagen
                 .padding(8.dp)
         )
     } else {
         Text("No hay imagen", color = Color.Gray, modifier = Modifier.padding(8.dp))
     }
     println("Cargando imagen para código: $codigo -> URL: $imagenUrl")
+    println("supuesta url: $imagenUrl")
 
 }
 
