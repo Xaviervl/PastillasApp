@@ -1,4 +1,4 @@
-package com.example.pastillasapp
+package com.example.pastillasapp.view.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
+import com.example.pastillasapp.R
+import com.example.pastillasapp.view.theme.espaciador
 
 @Composable
 fun LoginScreen(navigatetoMain : () -> Unit){

@@ -62,4 +62,13 @@ dependencies {
     implementation(libs.jetbrains.kotlinx.serialization.json)
     implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
+
+    //noinspection UseTomlInstead
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    //noinspection UseTomlInstead
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+
+
 }

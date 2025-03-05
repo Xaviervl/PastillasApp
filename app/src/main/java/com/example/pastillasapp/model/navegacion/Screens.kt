@@ -1,4 +1,4 @@
-package com.example.pastillasapp.navegacion
+package com.example.pastillasapp.model.navegacion
 
 import kotlinx.serialization.Serializable
 
@@ -9,4 +9,4 @@ data object Login
 data object Main
 
 @Serializable
-data object Medicina
+data object MainActivity
