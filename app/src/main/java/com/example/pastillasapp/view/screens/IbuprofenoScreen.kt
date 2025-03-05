@@ -1,7 +1,5 @@
 package com.example.pastillasapp.view.screens
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -18,9 +16,9 @@ import androidx.compose.ui.unit.dp
 import com.example.pastillasapp.R
 import com.example.pastillasapp.view.theme.detalles
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AmoxicilinaScreen(nombre: String) {
+@OptIn(ExperimentalMaterial3Api::class)
+fun IbuprofenoScreen(nombre : String){
     Scaffold(
         topBar = {
             TopAppBar(title = { Text(stringResource(R.string.detalles)) })
@@ -38,7 +36,7 @@ fun AmoxicilinaScreen(nombre: String) {
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(16.dp)
             )
-            detalles("62880")
+            detalles("67939")// aqui van los metodos para no perderme de nuevo 67939 codigo
         }
     }
 }

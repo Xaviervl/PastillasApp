@@ -7,8 +7,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pastillasapp.R
 import com.example.pastillasapp.view.screens.AmoxicilinaScreen
+import com.example.pastillasapp.view.screens.IbuprofenoScreen
 import com.example.pastillasapp.view.screens.LoginScreen
+import com.example.pastillasapp.view.screens.NaproxenoScreen
 import com.example.pastillasapp.view.screens.ParacetamolScreen
+import com.example.pastillasapp.view.screens.PildoraScreen
 import com.example.pastillasapp.view.screens.vista
 
 
@@ -28,7 +31,10 @@ fun NavigationWrapper(){
             val medicinaNombre = backStackEntry.arguments?.getString("medicinaNombre") // Obtener parámetro
             when(medicinaNombre.toString()){
                 stringResource(id = R.string.paracetamol) ->  ParacetamolScreen(medicinaNombre.toString())
+                stringResource(id = R.string.ibuprofeno) ->  IbuprofenoScreen(medicinaNombre.toString())
                 stringResource(id = R.string.amoxicilina) ->  AmoxicilinaScreen(medicinaNombre.toString())
+                stringResource(id = R.string.naproxeno) ->  NaproxenoScreen(medicinaNombre.toString())
+                stringResource(id = R.string.pildora) ->  PildoraScreen(medicinaNombre.toString())
             }
         }
     }

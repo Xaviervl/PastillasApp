@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 
 interface ApiClientRetrofit {
-    @GET("medicamento") // Sin el "?" al final
+    @GET("medicamento")
     suspend fun getMedicamento(
         @Query("nregistro") nregistro: String
     ): Medicamentos

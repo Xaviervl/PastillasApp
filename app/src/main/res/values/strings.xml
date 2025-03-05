@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PastillasApp</string>
+    <string name="app_name">Blister</string>
     <string name="paracetamol">Paracetamol</string>
     <string name="pildora">Pastilla Anticonceptiva</string>
     <string name="ibuprofeno">Ibuproeno</string>
@@ -22,6 +22,11 @@
 
     <string name="login">LOGIN SCREEN</string>
     <string name="loginad">*Esta es una simple login screen provisinal, se irá actualizando*</string>
+
+
+    <string name="detalles">Detalles del Medicamento</string>
+
+
 
 
 </resources>
